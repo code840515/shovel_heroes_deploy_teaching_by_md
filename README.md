@@ -49,37 +49,42 @@
 
 ## 4. 設定環境變數
 
-Clone 完專案後，桌面會出現專案資料夾。請進入該資料夾，新增 `.env` 檔案，並貼上以下內容：
+Clone 完專案後，桌面會出現專案資料夾。請進入該資料夾設定環境變數
 
-```env
-DATABASE_URL=postgres://postgres:postgres@localhost:5432/shovelheroes
-PORT=8787
+- .env檔案內容
+   ```env
+   DATABASE_URL=postgres://postgres:postgres@localhost:5432/shovelheroes
+   PORT=8787
 
-# === Public App / API Base ===
-PUBLIC_APP_URL=http://localhost:5173
-PUBLIC_BASE_URL=http://localhost:8787
+   # === Public App / API Base ===
+   PUBLIC_APP_URL=http://localhost:5173
+   PUBLIC_BASE_URL=http://localhost:8787
 
-# === LINE Login (OAuth 2.1 / OpenID Connect) ===
-LINE_CHANNEL_ID=
-LINE_CHANNEL_SECRET=
-LINE_REDIRECT_URI=http://localhost:8787/auth/line/callback
+   # === LINE Login (OAuth 2.1 / OpenID Connect) ===
+   LINE_CHANNEL_ID=
+   LINE_CHANNEL_SECRET=
+   LINE_REDIRECT_URI=http://localhost:8787/auth/line/callback
 
-# === Auth (JWT) ===
-AUTH_JWT_SECRET=dev-jwt-secret-change-me
+   # === Auth (JWT) ===
+   AUTH_JWT_SECRET=dev-jwt-secret-change-me
 
-# === Cookies / Sessions ===
-COOKIE_SECRET=dev-cookie-secret-change-me
-COOKIE_SECURE=0
+   # === Cookies / Sessions ===
+   COOKIE_SECRET=dev-cookie-secret-change-me
+   COOKIE_SECURE=0
 
-# === Frontend Build (Vite) ===
-VITE_API_BASE=http://localhost:8787
-VITE_TURNSTILE_SITE_KEY=
+   # === Frontend Build (Vite) ===
+   VITE_API_BASE=http://localhost:8787
+   VITE_TURNSTILE_SITE_KEY=
 
-# === Bot / Abuse Prevention ===
-TURNSTILE_SECRET_KEY=
-```
+   # === Bot / Abuse Prevention ===
+   TURNSTILE_SECRET_KEY=
+   ```
 
-![alt text](assets/setting_env.png)
+1. 在專案資料夾的根目錄底下新增 `.env` 檔案，並貼上內容：
+   ![alt text](assets/setting_env1.png)
+
+2. 在專案資料夾的packages/backend目錄底下新增 `.env` 檔案，並貼上內容：
+   ![alt text](assets/setting_env2.png)
 
 ---
 
@@ -88,11 +93,13 @@ TURNSTILE_SECRET_KEY=
 依照專案中的 `README.md` 內「快速開始」步驟操作。
 
 1. 在專案資料夾底下開啟終端機 (cmd)
+
 2. 執行以下指令安裝套件：
    ```bash
    npm install
    ```
    ![alt text](assets/cmd_npm_install.png)  
+   
    安裝完成後會看到 `node_modules` 資料夾  
    ![alt text](assets/file_node_modules.png)
 
@@ -100,6 +107,7 @@ TURNSTILE_SECRET_KEY=
    ```bash
    docker-compose up -d
    ```
+
    執行完後即可關閉cmd  
    ![alt text](assets/cmd_docker-compose_up_-d.png)
 
@@ -107,6 +115,7 @@ TURNSTILE_SECRET_KEY=
    ```bash
    npm run dev:api
    ```
+
    後端 Port 為 8787  
    ![alt text](assets/cmd_npm_run_dev-api.png)
 
@@ -114,6 +123,7 @@ TURNSTILE_SECRET_KEY=
    ```bash
    npm run dev
    ```
+   
    前端 Port 為 5173  
    此時會有兩個 cmd 視窗在運行  
    屆時造訪 [http://localhost:5173](http://localhost:5173) 即可查看前端畫面
@@ -124,7 +134,6 @@ TURNSTILE_SECRET_KEY=
 ## 6. 啟動 pgAdmin
 
 1. 打開 cmd，輸入以下指令啟動本地端的 pgAdmin：
-
     ```bash
     docker run --hostname=7091b8ed2551 --user=5050 \
     --env=PGADMIN_DEFAULT_EMAIL=admin@admin.com \
@@ -156,15 +165,15 @@ TURNSTILE_SECRET_KEY=
 ---
 
 ## 7. 匯入 SQL 測試資料
-1. 請先將 `public_test_data.sql` 放入你下載的專案資料夾中。
 
+1. 請先將 `public_test_data.sql` 放入你的"下載"資料夾中。
 - 使用者名稱位置  
     ![alt text](assets/user_name_where.png)
 
 - 資料庫容器 ID  
     ![alt text](assets/docker_postgres_view.png)
-2. 執行以下指令匯入資料：
-
+    
+2. 執行以下指令匯入資料(記得更改「你的使用者名稱」及「你的資料庫容器ID」)：
     ```bash
     docker cp C:/Users/你的使用者名稱/Downloads/public_test_data.sql 你的資料庫容器ID:/tmp/public_test_data.sql; \
     docker exec -i 你的資料庫容器ID sh -c "pg_restore -U postgres -d shovelheroes --clean --if-exists --no-owner --no-privileges /tmp/public_test_data.sql"
@@ -176,13 +185,13 @@ TURNSTILE_SECRET_KEY=
 
 ## 8. 連線 pgAdmin
 
-1. 右鍵建立 Server Group  
+1. 右鍵建立 Server Group 按「Create」→「Server Group」  
    ![alt text](assets/pgadmin_create_server_group.png)
 
 2. 命名為 `shovel_heroes`  
    ![alt text](assets/pgadmin_create_server_group_input_name.png)
 
-3. 點選剛剛的 group，按「Register」→「Server」  
+3. 點選新創建的 group，右鍵按「Register」→「Server」  
    ![alt text](assets/pgadmin_register_server.png)
 
 4. General 頁籤 → Name 輸入 `shovel`  
@@ -213,27 +222,35 @@ TURNSTILE_SECRET_KEY=
    ![alt text](assets/line_bot_step1.png)
 
 2. 使用 LINE 帳號登入  
-   ![alt text](assets/line_bot_step2.png)  
+   ![alt text](assets/line_bot_step2.png)
+   
    ![alt text](assets/line_bot_step3.png)
 
 3. 建立 Provider  
-   ![alt text](assets/line_bot_step4.png)  
+   ![alt text](assets/line_bot_step4.png)
+
    ![alt text](assets/line_bot_step5.png)
 
 4. 建立 LINE Login Channel  
-   ![alt text](assets/line_bot_step6.png)  
-   ![alt text](assets/line_bot_step7.png)  
-   ![alt text](assets/line_bot_step8.png)  
+   ![alt text](assets/line_bot_step6.png)
+
+   ![alt text](assets/line_bot_step7.png)
+
+   ![alt text](assets/line_bot_step8.png)
+   
    ![alt text](assets/line_bot_step9.png)
 
 5. 取得 Channel 參數，並填入 `.env`：
 - Channel ID  
     ![alt text](assets/line_bot_step10.png)
+
 - Channel Secret  
     ![alt text](assets/line_bot_step11.png)
+
 - Channel Callback URL  
     ![alt text](assets/line_bot_step12.png)
-- 編輯 `.env` 中的 LINE 相關參數  
+
+- 編輯專案根目錄及packages/backend目錄中 `.env` 的 LINE 相關參數  
     ![alt text](assets/setting_env_line.png)
 
     完成後，請將前後端關閉並重新啟動，造訪 [http://localhost:5173](http://localhost:5173)即可使用登入功能。
