@@ -298,7 +298,7 @@ Clone 完專案後，桌面會出現專案資料夾。請進入該資料夾設�
    輸入「`http://localhost:8787/auth/line/callback`」→「Update」
   ![alt text](assets/09-05-04-line-bot-step.png)
 
-- 編輯專案根目錄及 packages/backend 目錄中 `.env` 的 LINE 相關參數  
+- 編輯專案「根目錄」及「packages/backend」目錄中 `.env` 的 LINE 相關參數  
    ![alt text](assets/09-05-05-setting_env_line.png)
 
   完成後，請將前後端關閉並重新啟動，造訪 [http://localhost:5173](http://localhost:5173)即可使用登入功能。
