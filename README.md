@@ -170,7 +170,7 @@ Clone 完專案後，桌面會出現專案資料夾。請進入該資料夾設�
 
 3. 啟動新創建的虛擬環境，可透過對應的 Port 連線瀏覽器查看 GUI 介面：
 
-- 造訪地址: [http://localhost:5051/login?next=/]([http://localhost:5051/login?next=/)
+- 造訪地址：[http://localhost:5051/login?next=/]([http://localhost:5051/login?next=/)
 - 登入帳號：`admin@admin.com`
 - 密碼：`admin`
 
