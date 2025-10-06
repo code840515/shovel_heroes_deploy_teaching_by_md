@@ -170,7 +170,7 @@ Clone 完專案後，桌面會出現專案資料夾。請進入該資料夾設�
 
 3. 啟動新創建的虛擬環境，可透過對應的 Port 連線瀏覽器查看 GUI 介面：
 
-- 造訪地址：[http://localhost:5051/login?next=/]([http://localhost:5051/login?next=/)
+- 造訪地址：[http://localhost:5051/login?next=/](http://localhost:5051/login?next=/)
 - 登入帳號：`admin@admin.com`
 - 密碼：`admin`
 
@@ -236,7 +236,7 @@ Clone 完專案後，桌面會出現專案資料夾。請進入該資料夾設�
   連線成功後，可以看到「`shovel_heroes`」→「`shovel` 」下的的兩個資料庫，其中 `shovelheroes` 為主要資料庫：
   ![alt text](assets/08-05-02-pgadmin_register_show_datebase.png)
 
-  點擊「`shovelheroes`」→「`Schemas` 」→「`Publiic`」→「`Tables`」擴展  
+  點擊「`shovelheroes`」→「`Schemas` 」→「`Public`」→「`Tables`」擴展  
   如果 Tables 有數個資料表跑出，代表步驟 7 有成功匯入資料進去
   ![alt text](assets/08-05-03-pgadmin_register_show_tables.png)
 
