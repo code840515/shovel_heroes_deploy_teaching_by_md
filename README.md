@@ -225,8 +225,8 @@ Clone 完專案後，桌面會出現專案資料夾。請進入該資料夾設�
 5. Connection 頁籤：
 
 - Host：`host.docker.internal`
-- Maintenance：`shovelheroes`
 - Port：5432（預設）
+- Maintenance：`shovelheroes`
 - Username：`postgres`
 - Password：`postgres`
 - Save Password：打開
