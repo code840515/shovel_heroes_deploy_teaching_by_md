@@ -190,7 +190,7 @@ Clone 完專案後，桌面會出現專案資料夾。請進入該資料夾設�
 - 資料庫容器 ID  
    ![alt text](assets/07-00-02-docker-postgres-view.png)
 
-1. 開啟『終端機輸入』『PowerShell』或直接開啟『PowerShell』  
+1. 開啟『終端機』輸入『PowerShell』或直接開啟『PowerShell』  
    注意：輸入完指令路徑前面會多一個 PS，代表已進入 PowerShell
    ![alt text](assets/07-01-01-cmd-powershell.png)
 
