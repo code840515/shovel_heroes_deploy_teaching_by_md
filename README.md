@@ -248,7 +248,7 @@ Clone 完專案後，桌面會出現專案資料夾。請進入該資料夾設�
 
 註冊連結：[https://developers.line.biz/en/docs/messaging-api/using-bot-designer/](https://developers.line.biz/en/docs/messaging-api/using-bot-designer/)
 
-1. 點選 Login in to Console  
+1. 點擊 Login to Console  
    ![alt text](assets/09-01-line-bot-step.png)
 
 2. 使用 LINE 帳號登入  
@@ -290,12 +290,12 @@ Clone 完專案後，桌面會出現專案資料夾。請進入該資料夾設�
 - Channel Secret  
    ![alt text](assets/09-05-02-line-bot-step.png)
 
-- Channel Callback URL 設定-1  
+- Channel Callback URL 設定 - 1  
    點擊「Line Login」→「Edit」
   ![alt text](assets/09-05-03-line-bot-step.png)
 
-- Channel Callback URL 設定-2  
-   輸入「`http://localhost:8787/auth/line/callback`」→「Update」
+- Channel Callback URL 設定 - 2  
+   Callback URL 輸入「`http://localhost:8787/auth/line/callback`」→「Update」
   ![alt text](assets/09-05-04-line-bot-step.png)
 
 - 編輯專案「根目錄」及「packages/backend」目錄中 `.env` 的 LINE 相關參數  
